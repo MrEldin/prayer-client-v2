@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>PRAYER WITH EMANA</h1>
+    <h1 class="text-red-100">PRAYER WITH EMANA</h1>
   </div>
 </template>
 
