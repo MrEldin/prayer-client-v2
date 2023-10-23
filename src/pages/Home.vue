@@ -1,18 +1,24 @@
 <template>
-  <div class="container">
-    <h1 class="text-red-100">PRAYER WITH EMANA</h1>
-  </div>
+ <main-hero />
+ <info-block />
+ <features-info />
 </template>
 
 <script>
-    export default {
-        components: {
+import InfoBlock from '../components/app/InfoBlock.vue';
+import FeaturesInfo from '../components/app/FeaturesInfo.vue';
+import MainHero from '../components/app/MainHero.vue';
 
-        },
-        props: {
+export default {
+    components: {
+      InfoBlock,
+      FeaturesInfo,
+      MainHero,
+    },
+    props: {
 
-        }
     }
+}
 </script>
 
 <style scoped>
