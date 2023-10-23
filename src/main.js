@@ -7,7 +7,11 @@ import store from '@/store'
 import axios from 'axios'
 import 'vue-final-modal/style.css'
 
-axios.defaults.baseURL = 'https://api.wediiz.com'
+axios.defaults.baseURL = 'https://api.prayerapp.me'
 
 const vfm = createVfm()
-createApp(App).use(router).use(store).use(vfm).mount('#app')
+createApp(App)
+    .use(router)
+    .use(store)
+    .use(vfm)
+    .mount('#app')

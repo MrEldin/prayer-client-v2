@@ -1,48 +1,36 @@
-import {createRouter, createWebHistory} from 'vue-router'
-import store from '@/store'
+import { createRouter, createWebHistory } from 'vue-router';
+import routes from '@/routes';
 
-import Home from '@/pages/Home.vue'
-import Login from '@/pages/Login.vue'
-import Dashboard from '@/pages/Dashboard.vue'
-
-const routes = [
-    {
-        path: '/',
-        name: 'home',
-        component: Home,
-        meta: {layout: 'App'}
-    },
-    {
-        path: '/login',
-        name: 'admin.login',
-        component: Login,
-        meta: {layout: 'Login'},
-        props: true,
-        beforeEnter: (to, from, next) => {
-            if (store.getters['auth/authenticated']) {
-                return next({ name: 'admin.dashboard' })
-            }
-
-            return next()
-        }
-    },
-    {
-        path: '/dashboard',
-        name: 'admin.dashboard',
-        component: Dashboard,
-        meta: {layout: 'Dashboard'},
-        props: true,
-        beforeEnter: (to, from, next) => {
-            if (!store.getters['auth/authenticated']) {
-                return next({ name: 'admin.login' })
-            }
-
-            return next()
-        }
-    }
-];
-
-export default createRouter({
+const router = createRouter({
     history: createWebHistory(),
     routes
-})
+});
+
+router.beforeEach((to, from, next) => {
+    if (!to.meta.middleware) {
+        return next();
+    }
+
+    const middleware = to.meta.middleware;
+
+    const context = { next, to, from };
+    const iterator = (middlewares, middlewareIndex) => {
+        const currentMiddleware = middlewares[middlewareIndex];
+
+        if (!currentMiddleware) {
+            return next();
+        }
+
+        currentMiddleware(to, from, (...args) => {
+            if (args.length) {
+                return next(...args);
+            }
+
+            iterator(middlewares, middlewareIndex + 1);
+        });
+    };
+
+    iterator(middleware, 0);
+});
+
+export default router;
