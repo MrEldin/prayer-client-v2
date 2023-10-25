@@ -1,10 +1,10 @@
 <template>
 
-    <div class="container px-20 py-20 bg-[#E8FFFC] ">
-        <div class="relative"> 
+    <div class="px-20 py-20 bg-[#E8FFFC]">
+         
         <h1 class="text-4xl font-bold mb-6">Malo o prayeru</h1>
         <p class="text-md text-zinc-400 leading-tight mb-6">Prayer vam omogućava da lakše ispunite svoje vjerske obaveze, tako što vam daje tačne podatke o namaskim vremenima, smjernice za klanjanje i izvor duhovne inspiracije u vidu Kur'anskog teksta, hadisa i molitvi. S obzirom na to da smo svi deo ummeta, naša aplikacija također omogućava da ostanete povezani sa vašom zajednicom.</p>
-        </div>
+        
 
         <div class="mt-10 relative flex md:flex-row flex-col gap-20">
         <info-card 

@@ -3,11 +3,11 @@
           <div class="w-1/2 h-screen"> </div>
           <div class="relative w-1/2"> 
             <div class="absolute md:top-72 md:right-20 top-1/4 right-6">
-              <div> 
-                <h1 class="md:text-4xl text-2xl text-amber-200 font-bold mb-6">{{ title }}</h1>
-                <p class="max-w-sm md:text-md text-sm text-zinc-200 leading-tight mb-6">{{ subtitle }}</p>
+              <div class="flex flex-col last:items-end"> 
+                <h1 class="md:text-4xl items-start text-2xl text-amber-200 font-bold mb-6 pr-28">{{ title }}</h1>
+                <p class="max-w-sm md:text-md text-sm text-zinc-200 leading-tight mb-8">{{ subtitle }}</p>
+                <app-store-button image="apple-icon.svg" />
               </div>
-              <app-store-button image="apple-icon.svg" />
       
             </div>
             <div class="absolute md:top-72 top-1/2 md:left-20 right-56 mr-4"> 
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import AppStoreButton from './AppStoreButton.vue'
+import AppStoreButton from '../buttons/AppStoreButton.vue'
 
 
 export default {

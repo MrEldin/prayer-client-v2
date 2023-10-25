@@ -1,9 +1,9 @@
 <template> 
   <div class="px-20 pt-32 flex md:flex-row flex-col gap-36 bg-[#E8FFFC]" :class="{'md:flex-row-reverse': left == false}"> 
     <div> 
-      <img :src="getUrl(image)" alt=""/>
+      <img :src="getUrl(image)" alt="" />
     </div>
-    <div> 
+    <div class="flex flex-col last:items-end" :class="{'last:items-end': down == false}"> 
       <h1 class="text-4xl text-teal-950 font-bold mb-6">{{ header }}</h1>
       <p class="max-w-sm text-md text-zinc-400 leading-tight mb-6">{{ para1 }}</p>
       <p class="max-w-sm text-md text-zinc-400 leading-tight mb-6">{{ para2 }}</p>
@@ -15,7 +15,7 @@
 </template>
   
 <script> 
-import AppStoreButton from './AppStoreButton.vue'
+import AppStoreButton from '../buttons/AppStoreButton.vue'
 
 export default {
   components: { AppStoreButton },
@@ -26,7 +26,8 @@ export default {
         para1: String,
         para2: String,
         para3: String,
-        left: Boolean
+        left: Boolean,
+        down: Boolean
     },
     methods: {
         getUrl(image) {

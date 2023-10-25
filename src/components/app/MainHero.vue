@@ -1,6 +1,6 @@
 <template> 
-    <div class="bg-gradient-to-l to-teal-600 from-teal-950">
-        <div class="container background large">
+    <div class="flex items-center justify-center bg w-full">
+        <div class="container overflow-visible background large">
 
             <nav-elements :navItems="['Vremena', 'Aplikacija', 'Opcije', 'Gradovi']"/>
             <hero
@@ -8,11 +8,7 @@
                 subtitle="Borite se za ahiret, jer on je večan. Ako se budemo borili za dunjaluk, dunjaluk ćemo i dobiti, ali moguće je da ćemo ahiret izgubiti."
             />
         </div>
-        <div class=""> 
-            <div class="wave">
-            </div>
-        </div>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -21,7 +17,7 @@ import NavElements from './NavElements.vue'
 
 
 export default {
-  components: { NavElements, Hero },
+  components: { NavElements, Hero},
   name: "MainHero"
     
 }
@@ -34,47 +30,18 @@ export default {
     background-size: cover; 
 }
 
+.bg {
+    background: radial-gradient(circle, rgba(40,160,136,1) 0%, rgba(29,72,73,1) 100%);
+}
+
 .large {
-  padding-bottom: 60%;
+  padding-bottom: 50%;
 }
 
 .btn-small{
   font-size: 9px;
 }
 
-.wave {
-    display: block;
-    position: relative;
-    height: 40px;
-    width: 100%;
-    transform: scale(1, 1);
-}
-
-.wave:before {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100%;
-    width: 100%;
-    height: 300px;
-    background: #0d9488;
-    left: -25%;
-    top: -240px;
-    clip-path: ellipse(100% 15% at -15% 100%);
-}
-
-.wave:after {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100%;
-    width: 100%;
-    height: 300px;
-    background-color: #E8FFFC;
-;
-    right: -25%;
-    top: 20px
-}
 </style>
 
 
