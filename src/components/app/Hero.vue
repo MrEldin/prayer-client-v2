@@ -1,19 +1,19 @@
-<template> 
-    <div class="w-full flex flex-row">
+<template>
+    <div class="w-full flex flex-row overflow-visible">
           <div class="w-1/2 h-screen"> </div>
-          <div class="relative w-1/2"> 
-            <div class="absolute md:top-72 md:right-20 top-1/4 right-6">
-              <div class="flex flex-col last:items-end"> 
+          <div class="relative w-1/2 overflow-visible">
+            <div class="absolute md:top-72 md:right-20 top-1/4 right-6 overflow-visible">
+              <div class="flex flex-col last:items-end overflow-visible">
                 <h1 class="md:text-4xl items-start text-2xl text-amber-200 font-bold mb-6 pr-28">{{ title }}</h1>
                 <p class="max-w-sm md:text-md text-sm text-zinc-200 leading-tight mb-8">{{ subtitle }}</p>
                 <app-store-button image="apple-icon.svg" />
               </div>
-      
+
             </div>
-            <div class="absolute md:top-72 top-1/2 md:left-20 right-56 mr-4"> 
+            <div class="absolute md:top-72 top-1/2 md:left-20 right-56 mr-4">
               <img src="@/assets/star-icons.svg" alt="" class="md:w-40 w-20"/>
             </div>
-            <div class="absolute md:top-40 md:right-20 right-56 mr-4"> 
+            <div class="absolute md:top-40 md:right-20 right-56 mr-4">
               <img src="@/assets/star-icons-2.svg" alt="" class="md:w-40 w-20"/>
             </div>
           </div>
