@@ -1,6 +1,6 @@
 <template>
-    <div class="flex items-center justify-center bg w-full overflow-visible relative">
-        <div class="background"></div>
+    <div class="flex items-center justify-center bg w-full overflow-visible relative lg:pb-[600px] pb-0">
+        <div class="background hidden lg:block"></div>
         <div class="container overflow-visible">
             <nav-elements :navItems="['Vremena', 'Aplikacija', 'Opcije', 'Gradovi']"/>
             <hero
@@ -39,9 +39,61 @@ export default {
 
   background-image: url('../src/assets/prayer-home-big.svg');
   background-repeat: no-repeat;
-  background-position: calc(50% + 300px); /* Adjust background position as you wanted */
-  background-size: auto; /* You might need to adjust this too */
+  background-position: calc(20% + 90px) calc(60% - 100px) ; /* Adjust background position as you wanted */
+  
 }
+
+@media (max-width: 2220px ) {
+    .background {
+        background-image: url('../src/assets/prayer-home-big.svg');
+        background-position: calc(5% - 130px) calc(5% - 540px) ; /* Adjust background position as you wanted */
+        
+    }
+}
+
+@media (max-width: 1920px ) {
+    .background {
+        background-image: url('../src/assets/prayer-home-big.svg');
+        background-position: calc(5% - 250px) calc(5% - 500px) ; /* Adjust background position as you wanted */
+        
+    }
+}
+
+@media (max-width: 1720px ) {
+    .background {
+        background-image: url('../src/assets/prayer-home-big.svg');
+        background-position: calc(15% - 250px) calc(5% - 550px) ; /* Adjust background position as you wanted */
+        
+    }
+}
+
+@media (max-width: 1520px ) {
+    .background {
+        background-image: url('../src/assets/prayer-home-big.svg');
+        background-position: calc(15% - 200px) calc(5% - 520px) ; /* Adjust background position as you wanted */
+        
+    }
+}
+
+@media (max-width: 1440px ) {
+    .background {
+        background-image: url('../src/assets/prayer-home-big.svg');
+        background-position: calc(10% - 280px) calc(5% - 550px) ; /* Adjust background position as you wanted */
+    
+        
+    }
+}
+@media (max-width: 1280px ) {
+    .background {
+        background-image: url('../src/assets/prayer-home-big.svg');
+        background-position: calc(10% - 320px) calc(5% - 550px) ; /* Adjust background position as you wanted */
+    
+        
+    }
+}
+
+
+
 
 .bg {
     background: radial-gradient(circle, rgba(40,160,136,1) 0%, rgba(29,72,73,1) 100%);

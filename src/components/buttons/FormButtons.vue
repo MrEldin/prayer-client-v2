@@ -9,7 +9,8 @@ export default {
         bg: {
             type: String,
             default: "bg-[#21665F]"
-        }
+        },
+        
     }
 }
 </script>

@@ -1,9 +1,10 @@
-<template> 
-  <div class="px-20 pt-32 flex md:flex-row flex-col gap-36 bg-[#E8FFFC]" :class="{'md:flex-row-reverse': left == false}"> 
+<template>
+<div class="flex items-center justify-center flex-col py-20 bg-[#E8FFFC]"> 
+  <div class="pt-32 flex md:flex-row flex-col gap-40" :class="{'md:flex-row-reverse': left == false}"> 
     <div> 
       <img :src="getUrl(image)" alt="" />
     </div>
-    <div class="flex flex-col last:items-end" :class="{'last:items-end': down == false}"> 
+    <div class="flex flex-col last:items-end"> 
       <h1 class="text-4xl text-teal-950 font-bold mb-6">{{ header }}</h1>
       <p class="max-w-sm text-md text-zinc-400 leading-tight mb-6">{{ para1 }}</p>
       <p class="max-w-sm text-md text-zinc-400 leading-tight mb-6">{{ para2 }}</p>
@@ -12,6 +13,7 @@
       <app-store-button image="apple-icon.svg" />
     </div>
   </div>
+</div> 
 </template>
   
 <script> 
@@ -26,8 +28,7 @@ export default {
         para1: String,
         para2: String,
         para3: String,
-        left: Boolean,
-        down: Boolean
+        left: Boolean
     },
     methods: {
         getUrl(image) {
@@ -36,3 +37,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+h1 {
+  font-family: "Ramadanish";
+}
+</style>

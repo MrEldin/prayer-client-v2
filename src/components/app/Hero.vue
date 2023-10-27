@@ -1,23 +1,23 @@
 <template>
-    <div class="w-full flex flex-row overflow-visible">
-          <div class="w-1/2 h-screen"> </div>
-          <div class="relative w-1/2 overflow-visible">
-            <div class="absolute md:top-72 md:right-20 top-1/4 right-6 overflow-visible">
-              <div class="flex flex-col last:items-end overflow-visible">
-                <h1 class="md:text-4xl items-start text-2xl text-amber-200 font-bold mb-6 pr-28">{{ title }}</h1>
-                <p class="max-w-sm md:text-md text-sm text-zinc-200 leading-tight mb-8">{{ subtitle }}</p>
-                <app-store-button image="apple-icon.svg" />
-              </div>
-
-            </div>
-            <div class="absolute md:top-72 top-1/2 md:left-20 right-56 mr-4">
-              <img src="@/assets/star-icons.svg" alt="" class="md:w-40 w-20"/>
-            </div>
-            <div class="absolute md:top-40 md:right-20 right-56 mr-4">
-              <img src="@/assets/star-icons-2.svg" alt="" class="md:w-40 w-20"/>
-            </div>
+    <div class="w-full flex md:flex-row items-center justify-center md:overflow-visible">
+      <div class="w-1/2 h-screen lg:block hidden"> </div>
+      <div class="relative w-1/2 h-full md:overflow-visible">
+        <div class="relative lg:absolute xl:my-0 mb-20 mt-8 lg:mt-20 overflow-visible">
+          <div class="flex flex-col gap-8 max-w-6xl items-center">
+            <h1 class="xl:text-6xl lg:text-2xl text-3xl text-center text-[#ECD79F]">{{ title }}</h1>
+            <p class="max-w-md lg:text-md text-sm text-white text-center md:text-left opacity-50 leading-tight md:mr-8">{{ subtitle }}</p>
+            <app-store-button image="apple-icon.svg" />
           </div>
         </div>
+
+        <div class="absolute xl:top-1/2 lg:top-60 md:top-1/2 top-16 lg:left-2 lg:right-56 md:mr-4 -left-20">
+          <img src="@/assets/star-icons.svg" alt="" class="md:w-32 w-24"/>
+        </div>
+        <div class="absolute xl:top-1/2 lg:top-40 lg:right-2 md:right-52 -top-2 -right-16 mr-4">
+          <img src="@/assets/star-icons-2.svg" alt="" class="lg:w-36 md:w-32 w-24"/>
+        </div>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -33,3 +33,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+h1 {
+  font-family: "Ramadanish";
+}
+</style>

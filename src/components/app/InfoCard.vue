@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col gap-4 items-center justify-center px-6 py-10 bg-teal-950 rounded-2xl hover:scale-105 ease-out duration-500">
+    <div class="flex flex-col max-w-sm gap-4 items-center justify-center px-6 py-10 bg-teal-950 rounded-2xl hover:scale-105 ease-out duration-500">
         <div>
           <img :src="getUrl(image)" alt="" />
         </div>

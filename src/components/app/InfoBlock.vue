@@ -1,12 +1,12 @@
 <template>
 
-    <div class="px-20 py-20 bg-[#E8FFFC]">
+    <div class="px-20 flex items-center justify-center flex-col py-20 bg-[#E8FFFC]">
          
-        <h1 class="text-4xl font-bold mb-6">Malo o prayeru</h1>
-        <p class="text-md text-zinc-400 leading-tight mb-6">Prayer vam omogućava da lakše ispunite svoje vjerske obaveze, tako što vam daje tačne podatke o namaskim vremenima, smjernice za klanjanje i izvor duhovne inspiracije u vidu Kur'anskog teksta, hadisa i molitvi. S obzirom na to da smo svi deo ummeta, naša aplikacija također omogućava da ostanete povezani sa vašom zajednicom.</p>
+        <h1 class="text-4xl lg:text-center font-bold mb-6">Malo o prayeru</h1>
+        <p class="max-w-5xl lg:text-center text-md text-[#15353B] opacity-70 leading-tight mb-6">Prayer vam omogućava da lakše ispunite svoje vjerske obaveze, tako što vam daje tačne podatke o namaskim vremenima, smjernice za klanjanje i izvor duhovne inspiracije u vidu Kur'anskog teksta, hadisa i molitvi. S obzirom na to da smo svi deo ummeta, naša aplikacija također omogućava da ostanete povezani sa vašom zajednicom.</p>
         
 
-        <div class="mt-10 relative flex md:flex-row flex-col gap-20">
+        <div class="mt-10 relative flex items-center justify-center md:flex-row flex-col gap-20">
         <info-card 
             image="pray-time-icon.svg"
             title="Namaz"
@@ -41,3 +41,9 @@ export default {
     
 }
 </script>
+
+<style scoped>
+h1 {
+  font-family: "Ramadanish";
+}
+</style>
