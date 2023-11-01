@@ -1,6 +1,6 @@
 <template>
-    <label class="text-sm" :class="for1">{{text}}</label>
-    <input class="bg-[#E7EEED] rounded-md w-full p-1 mt-2" :type="input"/> 
+    <label class="text-[12px] font-medium leading-[11.38px] text-[#3E546C] opacity-[72%]" :class="for1">{{text}}</label>
+    <input class="bg-[#E7EEED] rounded-[5px] w-full p-1 mt-2" :type="input"/> 
 </template>
 
 

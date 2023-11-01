@@ -7,7 +7,7 @@
 <script>
 import MainHero from '../app/MainHero.vue';
 import InfoBlock from '../app/InfoBlock.vue';
-import FeaturesInfo from '../app/FeaturesInfo.vue';
+import FeaturesInfo from '@/components/app/FeaturesInfo.vue';
 
 export default {
     components: {

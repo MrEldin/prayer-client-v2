@@ -8,6 +8,5 @@ export default {
     components: {
         NewPassword
     }
-    
 }
 </script>

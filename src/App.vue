@@ -3,30 +3,39 @@
         <router-view />
     </component>
     <ModalsContainer />
+    <dark-mode />
+
 </template>
 
 <script>
-    import { provide, shallowRef } from 'vue'
-    import layouts from './layouts'
-    import router from './router'
-    import { ModalsContainer } from 'vue-final-modal'
+import { provide, shallowRef } from 'vue'
+import layouts from './layouts'
+import router from './router'
+import { ModalsContainer } from 'vue-final-modal'
+import DarkMode from './components/dark/DarkMode.vue'
 
-    export default {
-      components: {
-        ModalsContainer
-      },
-        setup() {
-            const layout = shallowRef('div')
 
-            router.afterEach((to) => {
-                layout.value = layouts[to.meta.layout] || 'div'
-            })
-            provide('app:layout', layout)
+export default {
+    components: {
+        ModalsContainer,
+        DarkMode,
+        
+    },
+    
+    setup() {
+        const layout = shallowRef('div')
 
-            return {
-                layout
-            }
+        router.afterEach((to) => {
+            layout.value = layouts[to.meta.layout] || 'div'
+        })
+        provide('app:layout', layout)
+
+        return {
+            layout
         }
-    }
+    },
+    
+}
 </script>
+
 

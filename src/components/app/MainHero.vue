@@ -1,8 +1,8 @@
 <template>
     <div class="flex items-center justify-center bg w-full overflow-visible relative lg:pb-[600px] pb-0">
         <div class="background hidden lg:block"></div>
-        <div class="container overflow-visible">
-            <nav-elements :navItems="['Vremena', 'Aplikacija', 'Opcije', 'Gradovi']"/>
+        <div class="container overflow-visible h-screen">
+            <nav-elements />
             <hero
                 title="Vaš Din, Vaš Mir"
                 subtitle="Borite se za ahiret, jer on je večan. Ako se budemo borili za dunjaluk, dunjaluk ćemo i dobiti, ali moguće je da ćemo ahiret izgubiti."
@@ -39,7 +39,7 @@ export default {
 
   background-image: url('../src/assets/prayer-home-big.svg');
   background-repeat: no-repeat;
-  background-position: calc(20% + 90px) calc(60% - 100px) ; /* Adjust background position as you wanted */
+  background-position: calc(20% + 90px) calc(60% - 70px) ; /* Adjust background position as you wanted */
   
 }
 
@@ -86,7 +86,16 @@ export default {
 @media (max-width: 1280px ) {
     .background {
         background-image: url('../src/assets/prayer-home-big.svg');
-        background-position: calc(10% - 320px) calc(5% - 550px) ; /* Adjust background position as you wanted */
+        background-position: calc(10% - 260px) calc(5% - 550px) ; /* Adjust background position as you wanted */
+    
+        
+    }
+}
+
+@media (max-width: 1180px ) {
+    .background {
+        background-image: url('../src/assets/prayer-home-big.svg');
+        background-position: calc(10% - 350px) calc(5% - 500px) ; /* Adjust background position as you wanted */
     
         
     }
