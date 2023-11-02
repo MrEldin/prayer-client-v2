@@ -1,11 +1,13 @@
 <template>
     <div>
       <div class="lg:flex flex-row items-center gap-8 text-white justify-center hidden">
+
+        <dark-mode />
         <!-- Desktop menu -->
         <a href="#tenses" class="hover:text-[#ECD79F] duration-300 text-md" v-for="navItem in navItems" :key="navItem">{{ navItem }}</a>
         <login-button text="Uloguj se" />
       </div>
-      
+
       <!-- Hamburger menu for tablet and mobile -->
       <div class="lg:hidden flex flex-col items-center gap-6 text-white justify-center">
         <!-- Add a button to toggle the menu on small screens -->
@@ -14,7 +16,7 @@
             <div class="bar bar2"></div>
             <div class="bar bar3"></div>
         </button>
-  
+
         <!-- Render the menu items if the menu is open -->
         <div v-if="isMenuOpen" class="mt-10 flex flex-col items-center gap-4 absolute top-10 right-20 z-10">
           <a href="#tenses" class="hover:text-[#ECD79F] duration-300 text-md" v-for="navItem in navItems" :key="navItem">{{ navItem }}</a>
@@ -26,9 +28,11 @@
 
 <script>
 import LoginButton from '@/components/buttons/LoginButton.vue'
+import DarkMode from "@/components/dark/DarkMode.vue";
 
 export default {
   components: {
+    DarkMode,
     LoginButton
   },
   props: {
@@ -47,8 +51,8 @@ export default {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
     },
-    
-  }, 
+
+  },
   computed: {
   }
 }
