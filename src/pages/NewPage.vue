@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import NewPassword from '../components/app/user/NewPassword.vue';
+import NewPassword from '@/components/app/user/NewPassword.vue';
 export default {
     components: {
         NewPassword

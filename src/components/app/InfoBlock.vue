@@ -1,9 +1,9 @@
 <template>
 
-    <div class="px-20 flex items-center justify-center flex-col py-20 bg-[#E8FFFC]">
+    <div class="px-20 flex items-center justify-center flex-col py-20 bg-[#E8FFFC] dark:bg-[#22292C]">
          
-        <h1 class="xl:text-[64px] lg:text-[44px] text-[32px] text-center text-[#15353B] mb-6">Malo o prayeru</h1>
-        <p class="max-w-5xl text-center xl:text-[20px] lg:text-[18px] text-[16px] lg:leading-[23.44px] text-[#15353B] opacity-70 mb-6">Prayer vam omogućava da lakše ispunite svoje vjerske obaveze, tako što vam daje tačne podatke o namaskim vremenima, smjernice za klanjanje i izvor duhovne inspiracije u vidu Kur'anskog teksta, hadisa i molitvi. S obzirom na to da smo svi deo ummeta, naša aplikacija također omogućava da ostanete povezani sa vašom zajednicom.</p>
+        <h1 class="xl:text-[64px] lg:text-[44px] text-[32px] text-center text-[#15353B] dark:text-[#FF9375] mb-6">Malo o prayeru</h1>
+        <p class="max-w-5xl text-center xl:text-[20px] lg:text-[18px] text-[16px] lg:leading-[23.44px] text-[#15353B] dark:text-[#A4A4A4] opacity-70 mb-6">Prayer vam omogućava da lakše ispunite svoje vjerske obaveze, tako što vam daje tačne podatke o namaskim vremenima, smjernice za klanjanje i izvor duhovne inspiracije u vidu Kur'anskog teksta, hadisa i molitvi. S obzirom na to da smo svi deo ummeta, naša aplikacija također omogućava da ostanete povezani sa vašom zajednicom.</p>
         
 
         <div class="mt-10 relative flex items-center justify-center lg:flex-row flex-col gap-20">

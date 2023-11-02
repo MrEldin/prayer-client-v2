@@ -1,15 +1,15 @@
 <template> 
-    <section class="w-full h-screen px-40 background flex items-center justify-center lg:flex-row flex-col gap-10">
+    <section class="w-full h-screen px-40 bg-radial-gradient dark:bg-dark-radial-gradient flex items-center justify-center lg:flex-row flex-col gap-10">
         <div class="flex flex-col"> 
             <intro-login gap="gap-20"></intro-login>
         </div>
-        <form class="p-10 my-2 bg-white rounded-3xl shadow-2xl max-w-sm"> 
+        <form class="p-10 my-2 bg-white dark:bg-[#303A3F] rounded-3xl shadow-2xl max-w-sm"> 
             <header-text header="Nova sifra" text="Unesi svoju email adresu i link će biti poslat za dodavanje nove šifre."/>
             <div class="my-2"> 
                 <input-label for1="password" input="password" text="Sifra" />
             </div>
             <input-label for1="password" input="password" text="Potvrdi šifru" />
-            <p class="text-blue-500 text-xs md:text-right text-center py-2 border-b-2">Nemaš nalog?</p>
+            <p class="text-[#67B0FF] dark:text-[#72B5FF] text-[12px] leading-[11.38px] font-medium md:text-right text-center py-2 border-b-[0.4px] border-[#d1d1d1] border-opacity-[26%]">Nemaš nalog?</p>
             <form-buttons text="Promeni šifru"/>
         </form>
         
@@ -21,6 +21,7 @@ import FormButtons from '../../buttons/FormButtons.vue';
 import HeaderText from '../../HeaderText.vue';
 import InputLabel from '../../input/InputLabel.vue';
 import IntroLogin from '../../IntroLogin.vue';
+import { useDark } from '@vueuse/core';
 
 export default {
     components: {
@@ -28,13 +29,12 @@ export default {
         HeaderText,
         InputLabel,
         FormButtons,
-        
-    }
+    },
+    data() {
+        return {
+            isDarkMode: useDark(),  
+        };
+    },
 }
 </script>
 
-<style scoped>
-.background {
-    background: radial-gradient(circle, rgba(40,160,136,1) 0%, rgba(29,72,73,1) 100%); ;
-}
-</style>

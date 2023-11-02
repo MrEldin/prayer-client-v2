@@ -8,7 +8,7 @@ export default {
         text: String,
         bg: {
             type: String,
-            default: "bg-[#21665F]"
+            default: "bg-[#21665F] dark:bg-[#3383a5]"
         },
         
     }

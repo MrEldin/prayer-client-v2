@@ -5,11 +5,11 @@
         </div>
         <div class="text-center lg:text-left flex flex-col" :class="gap">
             <div class="md:text-left text-center"> 
-                <h3 class="mt-10 max-w-sm font-thin md:text-2xl text-xl leading-7 text-slate-200">Prayer je svetlo koje pomaže vernicima da nemaju izgovor.</h3>
-                <p class="mt-8 max-w-xs text-white text-sm font-thin tracking-wider leading-4 font-style: italic">Nismo očekivali ovoliko veliki napredak prayera, ali vi ste delom učinili da svetlo opstane. Hvala vam.</p>
+                <h3 class="mt-10 max-w-sm font-[100px] md:text-2xl text-xl leading-[23.44px] text-slate-200">Prayer je svetlo koje pomaže vernicima da nemaju izgovor.</h3>
+                <p class="mt-8 max-w-xs text-white text-[13px] font-[400px] leading-[15.23px] font-style: italic">Nismo očekivali ovoliko veliki napredak prayer-a, ali vi ste delom učinili da svetlo opstane. Hvala vam.</p>
             </div>
             <div> 
-                <p class="mt-16 max-w-xs text-white text-xs tracking-wider leading-4 font-style: italic">Ustrajni budite u svom namazu.</p>
+                <p class="mt-16 max-w-xs text-white text-[13px] leading-[15.23px] font-style: italic">Ustrajni budite u svom namazu.</p>
             </div>
         </div>
     </div>
@@ -27,8 +27,9 @@ export default {
 </script>
 
 <style>
-p {
-    font-family: 'Roboto';
-}
+    h3, p {
+        font-family: 'Roboto';
+    }
+
 </style>
 

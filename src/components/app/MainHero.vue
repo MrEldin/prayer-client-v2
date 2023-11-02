@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Hero from './Hero.vue'
+import Hero from '@/components/app/Hero.vue'
 import NavElements from './NavElements.vue'
 import { useDark } from '@vueuse/core';
 
