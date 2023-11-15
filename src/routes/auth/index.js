@@ -19,11 +19,11 @@ export default [
         meta: { layout: 'Login', middleware: [guest] }
     },
     {
-        path: '/registration',
+        path: '/register',
         component: Registration
     },
     {
-        path: '/reseting',
+        path: '/reset',
         component: ResetPage
     },
     {

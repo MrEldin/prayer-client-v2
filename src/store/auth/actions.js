@@ -26,6 +26,37 @@ export default {
             // Handle login error
         }
     },
+    async register({ dispatch }, credentials) {
+        try {
+            const response = await axios.post('/api/register', credentials);
+            localStorage.setItem('jwtToken', response.data.access_token);
+            axios.defaults.headers = {
+                Authorization: 'Bearer ' + response.data.access_token
+            };
+            router.push({ path: '/login' });
+        } catch (error) {
+            console.error(error);
+            // Handle login error
+        }
+    },
+    async reset({ dispatch }, data) {
+        try {
+            const response = await axios.post('/api/reset', data);
+            router.push({ path: '/login' });
+        } catch (error) {
+            console.error(error);
+            // Handle login error
+        }
+    },
+    async newPage({ dispatch }, credentials) {
+        try {
+            const response = await axios.post('/api/reset-password', credentials);
+            router.push({ path: '/login' });
+        } catch (error) {
+            console.error(error);
+            // Handle login error
+        }
+    },
     logout() {
         localStorage.removeItem('user');
         localStorage.removeItem('jwtToken');

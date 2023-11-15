@@ -3,13 +3,13 @@
         <div> 
             <intro-login gap="gap-2"></intro-login>
         </div>
-        <form class="p-10 my-2 bg-white dark:bg-[#303A3F] rounded-3xl shadow-2xl max-w-xs"> 
+        <form @submit.prevent="resetPassword" class="p-10 my-2 bg-white dark:bg-[#303A3F] rounded-3xl shadow-2xl max-w-xs"> 
             <header-text header="Resetuj šifru" text="Unesi svoju email adresu i link će biti poslat za dodavanje nove šifre."/>
             <div class="my-2"> 
-                <input-label text="Email" />
+                <input-label :model-value="data.email" @update:model-value="newValue => data.email = newValue" text="Email" />
             </div>
-            <p class="text-[#67B0FF] dark:text-[#72B5FF] text-[12px] leading-[11.38px] font-medium md:text-right text-center py-2 border-b-[0.4px] border-[#d1d1d1] border-opacity-[26%]">Setio si se?</p>
-            <form-buttons text="Restartuj šifru"/>
+            <p @click="navigateToLogin" class="cursor-pointer text-[#67B0FF] dark:text-[#72B5FF] text-[12px] leading-[11.38px] font-medium md:text-right text-center py-2 border-b-[0.4px] border-[#d1d1d1] border-opacity-[26%]">Setio si se?</p>
+            <form-buttons text="Potvrdi email"/>
         </form>
         
     </section>
@@ -21,6 +21,8 @@ import HeaderText from '../../HeaderText.vue';
 import InputLabel from '../../input/InputLabel.vue';
 import IntroLogin from '../../IntroLogin.vue';
 import { useDark } from '@vueuse/core';
+import router from '../../../router';
+import { mapActions } from 'vuex';
 
 export default {
     components: {
@@ -31,8 +33,23 @@ export default {
     },
     data() {
         return {
-            isDarkMode: useDark(),  
+            isDarkMode: useDark(), 
+            data: {
+                email: ''
+            } 
         };
     },
+    methods: {
+        ... mapActions('auth', ['reset']),
+        resetPassword() {
+            this.reset(this.data)
+        },
+        navigateToLogin() {
+            router.push('/login')
+        },
+        navigateToNewPassword() {
+            router.push('/newpage')
+        }
+    }
 }
 </script>

@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import router from '../../router';
 export default {
     props: {
         text: String,
@@ -11,6 +12,7 @@ export default {
             default: "bg-[#21665F] dark:bg-[#3383a5]"
         },
         
-    }
+    },
+
 }
 </script>

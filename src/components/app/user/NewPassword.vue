@@ -3,14 +3,14 @@
         <div class="flex flex-col"> 
             <intro-login gap="gap-20"></intro-login>
         </div>
-        <form class="p-10 my-2 bg-white dark:bg-[#303A3F] rounded-3xl shadow-2xl max-w-sm"> 
-            <header-text header="Nova sifra" text="Unesi svoju email adresu i link će biti poslat za dodavanje nove šifre."/>
+        <form @submit.prevent="changePassword" class="p-10 my-2 bg-white dark:bg-[#303A3F] rounded-3xl shadow-2xl max-w-sm"> 
+            <header-text header="Nova šifra" text="Unesi svoju email adresu i link će biti poslat za dodavanje nove šifre."/>
             <div class="my-2"> 
-                <input-label for1="password" input="password" text="Sifra" />
+                <input-label :model-value="data.password" @update:model-value="newValue => data.password = newValue" for1="password" input="password" text="Šifra" />
             </div>
-            <input-label for1="password" input="password" text="Potvrdi šifru" />
-            <p class="text-[#67B0FF] dark:text-[#72B5FF] text-[12px] leading-[11.38px] font-medium md:text-right text-center py-2 border-b-[0.4px] border-[#d1d1d1] border-opacity-[26%]">Nemaš nalog?</p>
-            <form-buttons text="Promeni šifru"/>
+            <input-label :model-value="data.password2" @update:model-value="newValue => data.password2 = newValue" for1="password" input="password" text="Potvrdi šifru" />
+            <p @click="navigateToRegistration" class="cursor-pointer text-[#67B0FF] dark:text-[#72B5FF] text-[12px] leading-[11.38px] font-medium md:text-right text-center py-2 border-b-[0.4px] border-[#d1d1d1] border-opacity-[26%]">Nemaš nalog?</p>
+            <form-buttons @click="navigateToLogin" text="Promeni šifru"/>
         </form>
         
     </section>
@@ -22,6 +22,8 @@ import HeaderText from '../../HeaderText.vue';
 import InputLabel from '../../input/InputLabel.vue';
 import IntroLogin from '../../IntroLogin.vue';
 import { useDark } from '@vueuse/core';
+import router from '../../../router';
+import { mapActions } from 'vuex';
 
 export default {
     components: {
@@ -32,9 +34,26 @@ export default {
     },
     data() {
         return {
-            isDarkMode: useDark(),  
+            isDarkMode: useDark(), 
+            data: {
+                password: '',
+                password2: ''
+            } 
         };
     },
+    methods: {
+        ... mapActions('auth', ['new-page']),
+        navigateToRegistration() {
+            router.push('/register')
+        },
+        changePassword() {
+            this.resetPassword(this.data)
+        },
+        navigateToLogin() {
+            router.push('/login')
+        }
+    
+    }
 }
 </script>
 

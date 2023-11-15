@@ -14,7 +14,7 @@
 
 <script>
 import Hero from '@/components/app/Hero.vue'
-import NavElements from './NavElements.vue'
+import NavElements from '@/components/app/NavElements.vue'
 import { useDark } from '@vueuse/core';
 
 
@@ -123,12 +123,14 @@ export default {
 @media (max-width: 1280px ) {
   .background {
       background-image: url('@/assets/prayer-home-big.svg');
-      background-position: calc(10% - 260px) calc(5% - 550px) ; /* Adjust background position as you wanted */
+      background-position: calc(10% - 250px) calc(15% - 250px) ; /* Adjust background position as you wanted */
+      background-size: 150%;
   }
 
   .background-dark {
     background-image: url('@/assets/prayer-home-big-dark.svg');
-    background-position: calc(10% - 260px) calc(5% - 550px) ; /* Adjust background position as you wanted */
+    background-position: calc(10% - 250px) calc(15% - 250px) ; /* Adjust background position as you wanted */
+    background-size: 150%;
   }
 }
 
