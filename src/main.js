@@ -6,6 +6,7 @@ import router from '@/router'
 import store from '@/store'
 import axios from 'axios'
 import 'vue-final-modal/style.css'
+import '@/assets/prayer.css'
 
 axios.defaults.baseURL = 'https://api.prayerapp.me'
 
