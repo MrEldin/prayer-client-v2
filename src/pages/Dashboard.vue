@@ -1,6 +1,6 @@
 <template>
 <div>
-  <dash-board />
+  <index />
 </div>
 </template>
 
@@ -8,12 +8,12 @@
 import {useStore} from 'vuex'
 import VGrid from "@revolist/vue3-datagrid";
 import {ref} from "vue";
-import DashBoard from '../components/app/DashBoard.vue';
+import Index from '../components/app/dashboard/Index.vue';
 
 export default {
   components: {
     VGrid,
-    DashBoard
+    Index
   },
   setup() {
     const columns = ref([
