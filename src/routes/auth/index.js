@@ -3,9 +3,7 @@ import Login from '@/pages/Login.vue';
 import Registration from '@/pages/Registration.vue';
 import ResetPage from '@/pages/ResetPage.vue';
 import NewPage from '@/pages/NewPage.vue';
-import Dashboard from '@/pages/Dashboard.vue';
 import guest from '@/middleware/guest';
-import authenticated from '@/middleware/authenticated';
 
 export default [
     {
@@ -29,11 +27,6 @@ export default [
     {
         path: '/newpage',
         component: NewPage
-    },
-    {
-        path: '/dashboard',
-        name: 'admin.dashboard',
-        component: Dashboard,
-        meta: { layout: 'Dashboard', middleware: [authenticated] }
     }
+    
 ];

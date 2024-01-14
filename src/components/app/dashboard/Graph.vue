@@ -1,5 +1,5 @@
 <template>
-    <div class="w-[609px] h-[251px] bg-white rounded-[10px] border-[0.3px] border-[#CFCFCF]">
+    <div class="h-[251px] bg-white rounded-[10px] border-[0.3px] border-[#CFCFCF]">
         <div class="flex flex-row justify-between"> 
             <div class="px-10 pt-8"> 
                 <h3 class="text-[#657B7B] text-[12px] leading-[11.38px]">Kolicina lajkova na dnevnom nivou po jednoj knjizi</h3>
