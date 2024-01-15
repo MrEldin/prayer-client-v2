@@ -1,9 +1,11 @@
 <template>
-    <div class="flex">
+    <div class="flex h-screen">
       <side-bar />
-      <section class="flex flex-col">
+      <section class="flex-grow flex flex-col">
         <top-bar />
-        <router-view />
+        <div class="flex-grow">
+          <router-view />
+        </div>
       </section>
     </div>
 </template>
