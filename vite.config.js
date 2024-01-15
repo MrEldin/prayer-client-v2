@@ -21,7 +21,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src') // Configure the alias for your source directory
+      '@': path.resolve(__dirname, './src'),
+      '@vueuse': path.resolve(__dirname, 'node_modules/@vueuse/core/dist'),
     }
   }
 })

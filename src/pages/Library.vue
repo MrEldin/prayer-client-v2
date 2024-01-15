@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Library from '../components/app/dashboard/Library.vue';
+import Library from '@/components/app/dashboard/Library.vue';
 
 export default {
     components: { Library }

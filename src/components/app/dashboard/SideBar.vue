@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#1A534E] max-h-full w-[58px] min-w-[58px] px-2 pt-6 flex flex-col gap-[350px]">
+    <div class="bg-[#1A534E] flex-grow w-[58px] min-w-[58px] px-2 pt-6 flex flex-col gap-[350px]">
             <div> 
                 <img src="@/assets/logo.svg" alt="" class="w-10"/>
             </div>
@@ -22,7 +22,7 @@
 
 
 <script>
-import router from '../../../router';
+import router from '@/router';
 
 export default {
     methods: {
@@ -33,7 +33,7 @@ export default {
             router.push('/library');
         },
         navigateToCategory() {
-            router.push('/login');
+            router.push('/sidebarplus');
         },
     },
 }

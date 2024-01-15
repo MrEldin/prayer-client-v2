@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import StatisticAppVue from '../graphbar/StatisticApp.vue'
+import StatisticAppVue from '@/graphbar/StatisticApp.vue'
 
 
 export default {

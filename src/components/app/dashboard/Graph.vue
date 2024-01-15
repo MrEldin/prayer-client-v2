@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import GraphApp from '../graphline/GraphApp.vue'
+import GraphApp from '@/graphline/GraphApp.vue'
 
 
 
