@@ -1,8 +1,7 @@
 <template>
-    <div class="flex">
+    <div class="h-screen flex overflow-hidden">
       <side-bar />
-      <section class="flex flex-col">
-        <top-bar />
+      <section class="flex-grow flex flex-col">
         <router-view />
       </section>
     </div>

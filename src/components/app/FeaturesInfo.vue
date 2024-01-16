@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import ArtificialIntelligence from '@/ArtificialIntelligence.vue'
+import ArtificialIntelligence from '@/components/app/ArtificialIntelligence.vue'
 import { useDark } from '@vueuse/core';
 export default {
   components: { ArtificialIntelligence },

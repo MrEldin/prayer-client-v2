@@ -1,5 +1,6 @@
 <template>
-  <div class="h-full">
+  <div class="h-full flex flex-col overflow-y-hidden">
+    <top-bar />
     <index />
   </div>
 </template>
@@ -9,9 +10,11 @@ import {useStore} from 'vuex'
 import VGrid from "@revolist/vue3-datagrid";
 import {ref} from "vue";
 import Index from '../components/app/dashboard/Index.vue';
+import TopBar from "@/components/app/dashboard/TopBar.vue";
 
 export default {
   components: {
+    TopBar,
     VGrid,
     Index
   },

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#F2F8F7] px-6 h-full">
+    <div class="bg-[#F2F8F7] px-6 h-full overflow-y-auto">
         <div class="">
             <h3 class="text-[#163D3D] text-[24px] leading-[29.05px] font-normal pt-6">Dobrodosao nazad, Eldin</h3>
             <p class="#9B9B9B opacity-30 text-[12px] leading-[14.52px] pb-6">Ovde zivi sveobuhvatna statistika za sve tvoje aktivnosti.</p>
