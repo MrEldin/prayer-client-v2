@@ -1,0 +1,13 @@
+/* image 2 */
+
+width: 30px;
+height: 30px;
+
+background: #C4C4C4;
+border: 0.741176px solid rgba(62, 84, 108, 0.35);
+border-radius: 24.1818px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;

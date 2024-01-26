@@ -7,6 +7,7 @@ import store from '@/store'
 import axios from 'axios'
 import 'vue-final-modal/style.css'
 import '@/assets/prayer.css'
+import PrimeVue from 'primevue/config'
 
 axios.defaults.baseURL = 'https://api.prayerapp.me'
 
@@ -15,4 +16,6 @@ createApp(App)
     .use(router)
     .use(store)
     .use(vfm)
+    .use(PrimeVue)
     .mount('#app')
+

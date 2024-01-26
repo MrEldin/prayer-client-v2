@@ -1,10 +1,15 @@
 <template>
     <div class="dashboard-card-bg text-white rounded-md gap-6 p-4 flex-1">
-        <div class="flex flex-row gap-2 items-center"> 
-            <div class="bg-[#519F95] rounded-md px-2"> 
-                <i class="pr pr-like-2 text-white"></i>
+        <div class="flex flex-row justify-between"> 
+            <div class="flex gap-2 items-center"> 
+                <div class="bg-[#519F95] rounded-md px-2"> 
+                    <i class="pr pr-like-2 text-white"></i>
+                </div>
+                <h3 class="text-[12px] leading-[14.52px]">{{ header }}</h3>
             </div>
-            <h3 class="text-[12px] leading-[14.52px]">{{ header }}</h3>
+            <div class=""> 
+                <i class="pr pr-more text-white w-[12px]"></i>
+            </div>
         </div>
         <div class="flex flex-row gap-3 mt-3"> 
             <h2 class="text-[24px] leading-[29.05px] font-semibold">{{ number }}</h2>

@@ -1,10 +1,6 @@
-<script setup>
-
-</script>
-
 <template>
   <div
-      class="flex flex-col justify-start items-center self-stretch flex-grow-0 flex-shrink-0 w-[225px] overflow-hidden bg-[#33706a]"
+      class="h-screen flex flex-col justify-start items-center self-stretch flex-grow-0 flex-shrink-0 w-[225px] overflow-hidden bg-[#33706a]"
   >
     <div
         class="flex justify-center items-start self-stretch flex-grow-0 flex-shrink-0 h-[52px] overflow-hidden gap-2.5 p-2.5"
@@ -14,7 +10,7 @@
       >
         <div class="flex justify-between items-center self-stretch flex-grow relative">
           <p class="flex-grow-0 flex-shrink-0 text-xs font-light text-left text-white">Search</p>
-          <i class="pr pr-search-normal text-white" />
+          <i class="pr pr-search-normal text-white"></i>
         </div>
       </div>
     </div>
@@ -31,7 +27,7 @@
           <div
               class="flex flex-col justify-between items-center self-stretch flex-grow-0 flex-shrink-0 relative"
           >
-            <i class="pr pr-more text-white" />
+            <i class="pr pr-more text-white"></i>
           </div>
         </div>
       </div>
@@ -41,11 +37,15 @@
         <p class="flex-grow-0 flex-shrink-0 text-[10px] font-medium text-left text-[#6a7b7a]">
           Dodaj stranu
         </p>
-        <i class="pr pr-add text-black" />
+        <i class="pr pr-add text-black"></i>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+
+</script>
 
 <style scoped>
 
