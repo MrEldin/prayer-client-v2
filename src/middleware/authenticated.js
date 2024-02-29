@@ -1,12 +1,14 @@
-import store from '@/store';
+import { useAuthStore } from '@/store/auth';
 
 export default function authenticated(to, from, next) {
-    // Check if the user is authenticated using the Vuex getter
-    const isAuthenticated = store.getters['auth/authenticated'];
+    const authStore = useAuthStore();
 
-    // if (!isAuthenticated) {
-    //     return next({ name: 'admin.login' });  // Redirect to login if not authenticated
-    // }
+    // Directly check the reactive isAuthenticated state from the auth store
+    if (!authStore.isAuthenticated) {
+        // User is not authenticated, redirect to the login page
+        return next({ name: 'admin.login' });
+    }
 
-    return next();  // Allow to continue to the intended route if authenticated
+    // User is authenticated, proceed with the navigation
+    return next();
 }

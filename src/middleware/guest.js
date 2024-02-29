@@ -1,12 +1,14 @@
-import store from '@/store';
+import { useAuthStore } from '@/store/auth';
 
 export default function guest(to, from, next) {
-    // Check if the user is authenticated
-    const isAuthenticated = store.getters['auth/authenticated'];
+    const authStore = useAuthStore();
 
-    // if (isAuthenticated) {
-    //     return next({ name: 'admin.dashboard' });
-    // }
+    //Directly check the reactive isAuthenticated state from the auth store
+    if (authStore.isAuthenticated) {
+        // User is authenticated, redirect to the dashboard
+        return next({ name: 'admin.dashboard' });
+    }
 
+    // User is not authenticated, proceed with the navigation
     return next();
 }

@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import {useStore} from 'vuex'
 import VGrid from "@revolist/vue3-datagrid";
 import {ref} from "vue";
 import Index from '../components/app/dashboard/Index.vue';

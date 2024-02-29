@@ -1,12 +1,16 @@
-export default {
-    authenticated (state) {
-        return localStorage.getItem("user") !== null
+export const getters = {
+    isAuthenticated(state) {
+        return state.authenticated;
     },
-    user (state) {
-        return JSON.parse(localStorage.getItem("user"))
+    getUser(state) {
+        // Directly return the user object from reactive state
+        return state.user;
     },
-    name (state) {
-        const user = JSON.parse(localStorage.getItem("user"));
-        return user.data.first_name + ' ' + user.data.last_name
-    }
+    getName(state) {
+        if (!state.user || !state.user.data || !state.user.data.contact) return '';
+        return `${state.user.data.contact.data.first_name} ${state.user.data.contact.data.last_name}`;
+    },
+    getProfilePhoto(state) {
+        return state.user ? state.user?.data?.profile_photo ?? '' : '';
+    },
 };

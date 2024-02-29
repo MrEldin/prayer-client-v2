@@ -1,65 +1,52 @@
-import axios from 'axios';
-import router from '@/router'; // Adjust the path as needed
+import router from "@/router/index.js";
+import axiosInstance from "@/plugins/axios";
 
-export default {
-    async authenticate({ commit }) {
+export const actions = {
+    setAuthenticated(authenticated) {
+        this.authenticated = authenticated;
+    },
+    setUser(user) {
+        this.user = user;
+    },
+    async refreshUser() {
         try {
-            const response = await axios.get('/api/auth/user');
-            commit('SET_AUTHENTICATED', true);
-            commit('SET_USER', response.data);
+            const response = await axiosInstance.get('/api/auth/user?include=contact');
+            this.setAuthenticated(true);
+            this.setUser(response.data);
+        } catch (error) {
+            this.setAuthenticated(false);
+            this.setUser(null);
+        }
+    },
+    async authenticate() {
+        try {
+            const response = await axiosInstance.get('/api/auth/user?include=contact');
+            this.setAuthenticated(true);
+            this.setUser(response.data);
             router.push({ path: '/dashboard' });
         } catch (error) {
-            commit('SET_AUTHENTICATED', false);
-            commit('SET_USER', null);
+            this.setAuthenticated(false);
+            this.setUser(null);
         }
     },
-    async login({ dispatch }, credentials) {
+    async login(credentials) {
         try {
-            const response = await axios.post('/api/login', credentials);
-            localStorage.setItem('jwtToken', response.data.access_token);
-            axios.defaults.headers = {
-                Authorization: 'Bearer ' + response.data.access_token
+            const response = await axiosInstance.post('/api/login', credentials);
+            this.jwtToken = response.data.access_token; // Now using reactive jwtToken
+            axiosInstance.defaults.headers = {
+                Authorization: 'Bearer ' + response.data.access_token,
             };
-            await dispatch('authenticate');
+            await this.authenticate();
         } catch (error) {
-            console.error(error);
-            // Handle login error
-        }
-    },
-    async register({ dispatch }, credentials) {
-        try {
-            const response = await axios.post('/api/register', credentials);
-            localStorage.setItem('jwtToken', response.data.access_token);
-            axios.defaults.headers = {
-                Authorization: 'Bearer ' + response.data.access_token
-            };
-            router.push({ path: '/login' });
-        } catch (error) {
-            console.error(error);
-            // Handle login error
-        }
-    },
-    async reset({ dispatch }, data) {
-        try {
-            const response = await axios.post('/api/reset', data);
-            router.push({ path: '/login' });
-        } catch (error) {
-            console.error(error);
-            // Handle login error
-        }
-    },
-    async newPage({ dispatch }, credentials) {
-        try {
-            const response = await axios.post('/api/reset-password', credentials);
-            router.push({ path: '/login' });
-        } catch (error) {
-            console.error(error);
-            // Handle login error
+            this.authenticated = false;
+            this.user = null;
+            this.jwtToken = null; // Reset JWT token on login failure
         }
     },
     logout() {
-        localStorage.removeItem('user');
-        localStorage.removeItem('jwtToken');
+        this.user = null;
+        this.authenticated = false;
+        this.jwtToken = null; // Clear JWT token reactively
         router.push({ path: '/login' });
-    }
+    },
 };

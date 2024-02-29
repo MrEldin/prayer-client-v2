@@ -7,7 +7,6 @@
     </div>
 </template>
 <script>
-import {useStore} from "vuex";
 import SideBar from '@/components/app/dashboard/SideBar.vue';
 import TopBar from '@/components/app/dashboard/TopBar.vue';
 
@@ -17,8 +16,6 @@ export default {
     TopBar
   },
   setup() {
-    const store = useStore()
-
     return {
     }
   }

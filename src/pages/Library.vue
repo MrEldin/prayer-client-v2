@@ -1,15 +1,14 @@
 <template>
-  <div class="flex">
+  <div class="flex overflow-y-hidden">
     <ExtendedSideBar />
     <div class="flex-grow flex flex-col">
       <TopBar />
-      <Library />
+      <router-view />
     </div>
   </div>
 </template>
 
 <script setup>
-import Library from '@/components/app/dashboard/Library.vue';
 import TopBar from '@/components/app/dashboard/TopBar.vue';
 import ExtendedSideBar from "@/components/app/library/ExtendedSideBar.vue";
 
