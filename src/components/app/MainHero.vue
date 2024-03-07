@@ -5,9 +5,10 @@
         <div class="container overflow-visible h-screen">
             <nav-elements />
             <hero
-                title="Vaš Din, Vaš Mir"
-                subtitle="Borite se za ahiret, jer on je večan. Ako se budemo borili za dunjaluk, dunjaluk ćemo i dobiti, ali moguće je da ćemo ahiret izgubiti."
+                title="Namaska vremena"
             />
+            
+            
         </div>
     </div>
 </template>
@@ -16,6 +17,7 @@
 import Hero from '@/components/app/Hero.vue'
 import NavElements from '@/components/app/NavElements.vue'
 import { useDark } from '@vueuse/core';
+
 
 
 export default {
