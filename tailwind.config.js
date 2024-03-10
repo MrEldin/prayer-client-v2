@@ -9,7 +9,17 @@ export default {
             backgroundImage: theme => ({
                 'radial-gradient': 'radial-gradient(circle, rgba(40,160,136,1) 0%, rgba(29,72,73,1) 100%)',
                 'dark-radial-gradient': 'radial-gradient(circle, rgba(28,90,116,1) 0%, rgba(14,55,71,1) 100%)',  // Change the colors to whatever you desire for dark mode
-            })
+            }),
+            boxShadow: {
+                'card': '0px 1px 3px 0 rgba(0,0,0,0.15)'
+            },
+            screens: {
+                '3xl': '1920px',
+                '4xl': '2500px',
+            },
+            width: {
+                '1/8': '12.5%',
+            },
         }
     },
     variants: {

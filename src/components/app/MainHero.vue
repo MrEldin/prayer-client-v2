@@ -1,14 +1,10 @@
 <template>
-    <div class="flex items-center justify-center bg-radial-gradient dark:bg-dark-radial-gradient w-full overflow-visible relative lg:pb-[600px] pb-0">
-        <div v-if="isDarkMode" class="background-dark hidden lg:block"></div>
-        <div v-else class="background hidden lg:block"></div>
+    <div class="flex items-center justify-center bg-radial-gradient dark:bg-dark-radial-gradient w-full overflow-hidden relative lg:pb-[320px] 4xl:pb-[100px] pb-0">
+        <BigBackgroundDark class="absolute w-[2300px] left-[-240px] top-[-370px] 4xl:w-[4800px] 4xl:left-0 4xl:top-[-850px]" v-if="isDarkMode" ></BigBackgroundDark>
+        <BigBackground class="absolute w-[2300px] left-[-240px] top-[-370px] 4xl:w-[4800px] 4xl:left-0 4xl:top-[-850px]" v-else ></BigBackground>
         <div class="container overflow-visible h-screen">
             <nav-elements />
-            <hero
-                title="Namaska vremena"
-            />
-            
-            
+            <hero title="Namaska vremena"/>
         </div>
     </div>
 </template>
@@ -17,11 +13,13 @@
 import Hero from '@/components/app/Hero.vue'
 import NavElements from '@/components/app/NavElements.vue'
 import { useDark } from '@vueuse/core';
+import BigBackgroundDark from "@/components/app/BigBackgroundDark.vue";
+import BigBackground from "@/components/app/BigBackground.vue";
 
 
 
 export default {
-  components: { NavElements, Hero},
+  components: {BigBackground, BigBackgroundDark, NavElements, Hero},
   name: "MainHero",
   data() {
     return {

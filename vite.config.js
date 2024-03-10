@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import path from 'path'
+import svgLoader from "vite-svg-loader";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,7 +18,8 @@ export default defineConfig({
           faviconHref: 'https://wediiz.com/favicon.ico',
         }
       }
-    })
+    }),
+    svgLoader()
   ],
   resolve: {
     alias: {
